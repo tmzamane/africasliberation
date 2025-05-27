@@ -7,10 +7,6 @@ Table of Contents
     Live Demo
     Installation and Setup (Local)
     Database Setup
-    Deployment to Afrihost
-    Contributing
-    License
-    Contact
 
 Description
 
