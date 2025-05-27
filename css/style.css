@@ -1,0 +1,538 @@
+/* Google Fonts Import (ensure these are linked in your HTML <head> too) */
+/*
+If you haven't already, add these lines to your HTML <head> section:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+*/
+
+/* General Body and Container Styles */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    /* Set the background image to cover the entire page */
+    background-image: url('../images/DAC_Background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: #333; /* Fallback color if image doesn't load */
+    color: #fff;
+
+    /* --- START STICKY FOOTER STYLES --- */
+    display: flex; /* Make the body a flex container */
+    flex-direction: column; /* Stack its children (header, main, footer) vertically */
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    /* --- END STICKY FOOTER STYLES --- */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Main Content Wrapper */
+main {
+    /* --- START STICKY FOOTER STYLES --- */
+    flex: 1; /* This makes the 'main' element grow and take up all available space between header and footer */
+    /* --- END STICKY FOOTER STYLES --- */
+}
+
+/* Header Styles - No changes needed here for sticky footer */
+header {
+    background: #000000;
+    color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-height: 70px;
+    border-bottom: #4CAF50 3px solid;
+}
+
+/* ... (rest of your header, nav, logo, social icons styles) ... */
+
+
+/* Main Content Sections - Semi-transparent background and centered text for readability */
+main section {
+    padding: 20px 0;
+    margin-bottom: 20px; /* Keep margin-bottom for spacing between sections */
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* ... (rest of your section, form, button, etc. styles) ... */
+
+
+/* Footer Styles - No changes needed here for sticky footer, as it's the flex-end item */
+footer {
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 0; /* Important: remove margin-top here so it doesn't create extra space pushing it down */
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ... (rest of your footer content, logo, social icons styles) ... */
+
+
+/* Responsive Design - Adjustments for smaller screens */
+@media (max-width: 768px) {
+    /* ... (all your existing responsive styles) ... */
+
+    /* Footer Responsive - also ensure margin-top is 0 here */
+    footer {
+        margin-top: 0;
+    }
+}
+/* Flexbox container for header content */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Pushes items to the ends */
+    align-items: center; /* Vertically centers items */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.logo img {
+    height: 50px; /* Adjust logo height as needed */
+    width: auto;
+    display: block; /* Remove any extra space below image */
+}
+
+header nav {
+    /* Remove floats and adjust for flexbox */
+    float: none; /* Important to remove old float */
+    margin-top: 0;
+    flex-grow: 1; /* Allows nav to take up available space */
+    text-align: center; /* Center the navigation links */
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex; /* Use flexbox for nav items */
+    justify-content: center; /* Center nav items */
+}
+
+header li {
+    display: inline-block; /* Changed to inline-block for better spacing control in flex */
+    padding: 0 15px;
+}
+
+header a {
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat to nav links */
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #4CAF50; /* Green on hover to match border */
+    font-weight: bold;
+}
+
+/* Header Social Media Icons (if you put them here instead of footer) */
+.social-icons {
+    display: flex; /* Use flexbox for social icons */
+    gap: 10px; /* Space between icons */
+    align-items: center; /* Vertically center icons */
+    margin-left: 20px; /* Add some space from the navigation */
+}
+
+.social-icon img {
+    height: 24px; /* Adjust social icon size as needed */
+    width: 24px;
+    transition: transform 0.2s ease; /* Add a subtle hover effect */
+}
+
+.social-icon img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
+/* Main Content Sections - Semi-transparent background and centered text for readability */
+main section {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    /* Add a semi-transparent dark background for better text readability */
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    border-radius: 8px; /* Slightly rounded corners */
+    text-align: center; /* Centered text alignment for all main sections */
+}
+
+#hero {
+    /* Hero section can have a slightly different opacity if preferred, or inherit from main section */
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly less opaque for hero */
+    color: #fff;
+    padding: 50px 0;
+    border-radius: 8px;
+}
+
+#hero h2 {
+    font-family: 'Montserrat', sans-serif; /* Montserrat for hero H2 */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#hero p {
+    font-family: 'Open Sans', sans-serif; /* Open Sans for hero paragraph */
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+
+#about-content,
+#home-content,
+#map-section {
+    /* These sections now have the general main section styling */
+    /* text-align: justify; was removed here */
+    padding: 20px;
+}
+
+/* Optional: If you want specific paragraphs to be left-aligned or justified within centered sections */
+#about-content p,
+#home-content p {
+    text-align: left; /* Or text-align: justify; */
+    margin: 0 auto; /* Center the block if it's narrower than its container */
+    max-width: 800px; /* Optional: Constrain width for readability */
+}
+
+
+#about-content h2,
+#home-content h2,
+#map-section h2,
+#registration-form h2 {
+    font-family: 'Montserrat', sans-serif; /* Montserrat for all section H2s */
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#map-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    /* The border that was mistakenly added here is now removed/commented out */
+    /* border: 2px solid #4CAF50; */
+    border-radius: 5px;
+}
+
+/* Form Styles - Semi-transparent background for readability */
+#registration-form {
+    text-align: center;
+    padding: 30px 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Consistent semi-transparent dark background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Form specific alignment remains as is for labels/inputs */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Keep form labels left-aligned for usability */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff; /* Labels are white */
+}
+
+/* Input fields retain white background for usability but text is dark */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333; /* Input text remains dark for contrast against white input background */
+    background-color: #fff; /* Keep input background white for usability */
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    background: #000000; /* Green button */
+    color: #fff; /* THIS IS THE TEXT COLOR! */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #013003; /* Darker green on hover */
+    text-decoration: none;
+    color: white;
+}
+
+.container .rg-btn {
+    font-family: 'Montserrat', sans-serif;
+    display: inline-block;
+    background: #000000; /* Green button */
+    color: #fff; /* THIS IS THE TEXT COLOR! */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+
+.container .rg-btn:hover {
+    background: #013003; /* Darker green on hover */
+    text-decoration: none;
+    color: white;
+}
+
+.attendee-count {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly translucent white background for this box */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    border-radius: 8px;
+    color: #fff;
+}
+
+.attendee-count h3 {
+    font-family: 'Montserrat', sans-serif; /* Montserrat for attendee count H3 */
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.attendee-count span {
+    color: #FFD700; /* Gold for the number to make it stand out */
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.attendee-count .note {
+    font-size: 0.9em;
+    color: #ccc;
+    margin: 0;
+}
+
+/* Footer Styles - Solid black footer with Flexbox layout */
+footer {
+    background: #000000; /* Solid black footer for good contrast */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-family: 'Open Sans', sans-serif; /* Open Sans for footer text */
+}
+
+/* Flexbox container for footer content */
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Pushes items to the ends */
+    align-items: center; /* Vertically centers items */
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.footer-logo img {
+    height: 100px; /* Adjust logo height for footer, maybe a bit smaller */
+    width: auto;
+    display: block;
+}
+
+footer p {
+    margin: 0 20px; /* Add some horizontal margin around the copyright text */
+    flex-grow: 1; /* Allows copyright text to take up available space */
+    text-align: center; /* Center the copyright text */
+}
+/* Social Media Icons in Footer */
+.social-icons-footer {
+    display: flex;
+    gap: 5px; /* Increased gap slightly for better visual separation */
+    align-items: center;
+}
+
+/* Style for the social icon links themselves */
+.social-icon-footer {
+    display: inline-block; /* Ensures the link behaves as a block for padding/sizing */
+    padding: 50px; /* Add some padding around the icon to make click area larger */
+    border-radius: 50%; /* Make it round if you want a circular background on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    text-decoration: none; /* Remove underline from the link */
+    color: #fff; /* Ensure any default link text is white */
+}
+
+.social-icon-footer:hover {
+    background-color: rgba(76, 175, 80, 0.2); /* Subtle green semi-transparent background on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.social-icon-footer img {
+    height: 24px; /* Slightly increased icon size for better visibility/clickability */
+    width: 24px;
+    display: block; /* Remove extra space below the image */
+    /* No direct transform on img here, as it's handled by the parent a tag */
+}
+
+/* Responsive Design for Footer - Adjustments for smaller screens */
+@media (max-width: 768px) {
+    /* ... existing footer responsive styles ... */
+
+    .footer-logo {
+        margin-bottom: 15px;
+    }
+
+    .footer-logo img {
+        height: 50px; /* Adjust responsive height if needed */
+    }
+
+    footer p {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .social-icons-footer {
+        margin-top: 15px;
+        justify-content: center;
+        width: 100%;
+        gap: 10px; /* Adjust gap for smaller screens if necessary */
+    }
+
+    .social-icon-footer img {
+        height: 20px; /* Adjust responsive icon size if needed */
+        width: 20px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Header Responsive */
+    .header-content {
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 10px; /* Space below logo */
+    }
+
+    header nav {
+        width: 100%; /* Nav takes full width */
+        margin-bottom: 10px; /* Space below nav */
+    }
+
+    header ul {
+        flex-direction: column; /* Stack nav links vertically */
+        align-items: center; /* Center stacked links */
+    }
+
+    header li {
+        margin-bottom: 5px; /* Space between stacked nav links */
+    }
+
+    .social-icons {
+        margin-left: 0; /* Remove left margin */
+        margin-top: 10px; /* Space above social icons */
+        justify-content: center; /* Center social icons */
+        width: 100%;
+    }
+
+    /* Footer Responsive */
+    .footer-content {
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin-bottom: 15px; /* Space below logo */
+    }
+
+    footer p {
+        margin: 10px 0; /* Adjust margin for stacked text */
+        width: 100%; /* Ensure text takes full width when stacked */
+    }
+
+    .social-icons-footer {
+        margin-top: 15px; /* Space above social icons */
+        justify-content: center; /* Center social icons */
+        width: 100%;
+    }
+
+    /* General Responsive Adjustments */
+    .container {
+        width: 95%; /* Wider container on small screens */
+        padding: 10px 0; /* Reduce container padding */
+    }
+
+    main section {
+        padding: 15px; /* Adjust section padding for smaller screens */
+    }
+
+    #hero {
+        padding: 30px 0; /* Adjust hero padding */
+    }
+
+    #hero h2 {
+        font-size: 2em; /* Smaller font for hero heading */
+    }
+
+    #hero p {
+        font-size: 1em; /* Smaller font for hero paragraph */
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group textarea {
+        width: 100%; /* Ensure inputs take full width */
+        padding: 8px; /* Slightly less padding */
+    }
+
+    .btn {
+        font-size: 16px; /* Smaller button font */
+        padding: 8px 15px; /* Smaller button padding */
+    }
+
+    .attendee-count h3 {
+        font-size: 1.2em; /* Smaller attendee count heading */
+    }
+
+    .attendee-count span {
+        font-size: 1.3em; /* Smaller attendee count number */
+    }
+}
+.error-message {
+    color: #ff4d4d; /* Red color for error messages */
+    margin-top: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center; /* Center messages */
+}
+
+.success-message {
+    color: #4CAF50; /* Green color for success messages */
+    margin-top: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center; /* Center messages */
+}
